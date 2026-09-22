@@ -13,8 +13,8 @@ drop-in replacement.
   against the Nuthatch GraphQL handler at their recorded blocks. The fixture corpus contains the
   fixed client documents used by indexer-agent, indexer-service-rs and the TAP monitor.
 - GraphQL scalar encoding, lowercase identifiers, pagination, `_meta`, and block-pinned archive
-  reads have focused coverage. `arg_max(value, order)` was added to the incremental entity engine
-  and is tested for both normal updates and reorg retraction.
+  reads have focused coverage. `arg_max` is not part of this work: the incremental entity engine still
+  refuses it (`src/entities.rs`, `every_ineligible_construct_is_refused`), and no view here uses it.
 
 ## What did not meet the production bar
 
