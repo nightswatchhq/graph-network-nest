@@ -49,7 +49,8 @@ Limits:
 - **`nuthatch_abi_tuple` is approximated by a structural check.** Only `TRY(...) IS NOT NULL` in
   `38-registration` reads it, and the reference and the fold share it, so the differential is exact.
   The head comparison against the gateway matched regardless.
-- **Sealed history only.** The hot tail is not exercised.
+- **The main differential is sealed history.** A separate redb hot-tail operator probe is
+  described below. It is not a full independent graph-node parity check.
 - **Measurements are of a cold DuckDB process per evaluation,** not of a resident runtime (see
   finding 3).
 
@@ -132,7 +133,36 @@ at head.
   faithfully, since `BIGNUM` multiplication coerces to floating point. It needs a harness on
   nuthatch's own connection, with `analytics_scalars::register`. DuckDB's recursive performance inside
   a window therefore remains unmeasured.
-- **The hot tail** (redb) was not part of the corpus. Windows here are sealed-only.
+- **The hot tail** was excluded from the original 24-block differential. The operator probe below
+  covers its clock and persisted-clock paths, but does not make S0 a full hot-tail differential.
+
+## Redb hot-tail operator probe (2026-09-23)
+
+`hot-tail-network.sh` folds actual post-seal rows exported by `nuthatch sql --json` over the saved
+checkpoint at block 507,177,123. The sealed catalogue ends at 507,179,123. The tested window ends at
+507,197,663. Its three exports contain **116 pinned L1 observations, 105 GRT transfers and 10 GRT
+approvals**. All rows are above the seal; the script rejects exports outside its requested window.
+
+With the sealed-only window, `currentL1BlockNumber` is **26,020,177**. With the hot rows it is
+**26,020,360**. Deliberately omitting the approvals produces **26,020,623**, because those events
+are excluded from the persisted-clock path. The other eight projection values and the epoch-bounds
+digest were unchanged in this window. The complete hot step took **0.849 s and 288.6 MiB peak RSS**
+on the ThinkPad. This exceeds the 256 MiB target, although it remains below the 512 MiB whole-step
+limit.
+
+Reproduce after exporting the three tables from the same nest with `nuthatch sql --json` and a
+`block_number > 507179123` filter:
+
+```sh
+./hot-tail-network.sh 507177123 507197663 ckpt-a/507177123 hot-fold \
+  hot-observations.jsonl hot-transfers.jsonl hot-approvals.jsonl
+```
+
+This uses the nest's exported, pinned `network_l1_observation` rows rather than recomputing
+`EpochManager.blockNum()` inside plain DuckDB. It tests checkpoint integration and the persisted
+filter, not the event-to-call join or every hot source table. The one-shot view did not serve as an
+independent reference: Nuthatch's 30-second query budget and 512 MiB DuckDB allocation limit stopped
+the attempt to query it at this corpus size. That missing comparison remains a gate for S1.
 
 ## An incident worth keeping
 
