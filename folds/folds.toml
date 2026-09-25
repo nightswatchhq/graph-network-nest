@@ -1,6 +1,6 @@
 [[fold]]
 name = "legacy_allocs"
-key = ["id"]
+key = "unkeyed"
 carry = ["id VARCHAR"]
 max_rows = 1000000
 
