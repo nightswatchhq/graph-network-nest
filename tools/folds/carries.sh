@@ -5,7 +5,7 @@
 set -euo pipefail
 nest=$1 n=$2 ck=$3 out=$4
 bin=${NUTHATCH:-$HOME/nuthatch-folds/target/release/nuthatch}
-duck=${DUCKDB:-$HOME/spike-0059/bin/duckdb}
+duck=${DUCKDB:-$(cd "$(dirname "$0")" && pwd)/spike/bin/duckdb}
 mkdir -p "$out"
 for pair in sched:schedule clock:clock epochs:epochs persisted:persisted latest_obs:latest_obs \
             indexers:indexers legacy_allocs:legacy_allocs pause:pause last_run:last_run; do

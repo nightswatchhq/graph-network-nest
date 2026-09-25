@@ -1,0 +1,4 @@
+tools/folds/spike/bin/
+tools/folds/spike/out/*
+!tools/folds/spike/out/ref-*-bounds.csv
+results-*/
