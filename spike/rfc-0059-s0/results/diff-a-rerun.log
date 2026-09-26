@@ -1,0 +1,4 @@
+MATCH n=486895439 ref[wall_s=58.123 peak_rss_mib=10894.4] fold[from=480000000 wall_s=1.387 peak_rss_mib=446.4] currentEpoch=1329 epochCount=1321 l1=25595826
+MATCH n=500000000 ref[wall_s=59.219 peak_rss_mib=10726.2] fold[from=500000000 wall_s=1.012 peak_rss_mib=288.6] currentEpoch=1367 epochCount=1359 l1=25869204
+MATCH n=505750187 ref[wall_s=62.783 peak_rss_mib=10803.1] fold[from=500000000 wall_s=1.425 peak_rss_mib=393.7] currentEpoch=1383 epochCount=1375 l1=25989681
+RERUN-DONE
