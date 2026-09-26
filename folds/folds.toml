@@ -1,0 +1,53 @@
+[[fold]]
+name = "legacy_allocs"
+key = "unkeyed"
+carry = ["id VARCHAR"]
+max_rows = 1000000
+
+[[fold]]
+name = "indexers"
+key = ["indexer"]
+carry = ["indexer VARCHAR"]
+max_rows = 10000
+
+[[fold]]
+name = "schedule"
+key = "singleton"
+carry = ["seq BIGINT", "block_number UBIGINT", "log_index UBIGINT", "epoch BIGINT", "length BIGINT", "start_block BIGINT"]
+max_rows = 1
+
+[[fold]]
+name = "clock"
+key = "singleton"
+carry = ["last_l1 BIGINT", "any_v4 BOOLEAN"]
+max_rows = 1
+
+[[fold]]
+name = "epochs"
+key = ["epoch"]
+carry = ["epoch BIGINT", "block_number UBIGINT", "log_index UBIGINT", "start_block BIGINT", "length BIGINT"]
+max_rows = 100000
+
+[[fold]]
+name = "latest_obs"
+key = "singleton"
+carry = ["block_number UBIGINT", "log_index UBIGINT", "epoch BIGINT"]
+max_rows = 1
+
+[[fold]]
+name = "persisted"
+key = "singleton"
+carry = ["block_number UBIGINT", "log_index UBIGINT", "l1_block BIGINT"]
+max_rows = 1
+
+[[fold]]
+name = "pause"
+key = ["kind"]
+carry = ["kind VARCHAR", "block_number UBIGINT", "log_index UBIGINT", "value BOOLEAN"]
+max_rows = 2
+
+[[fold]]
+name = "last_run"
+key = "singleton"
+carry = ["block_number UBIGINT", "log_index UBIGINT", "epoch VARCHAR"]
+max_rows = 1
