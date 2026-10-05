@@ -1,0 +1,27 @@
+mutation-visible cut=46178191 n=46235811 l1 correct=16184958 mutated=16186970
+mutation-visible cut=62375300 n=62410485 l1 correct=16661411 mutated=16662330
+mutation-visible cut=62376576 n=62410485 l1 correct=16661411 mutated=16662330
+mutation-visible cut=69934789 n=69939613 l1 correct=16830035 mutated=16830498
+mutation-visible cut=69934810 n=69939613 l1 correct=16830035 mutated=16830498
+mutation-visible cut=69934822 n=69939613 l1 correct=16830035 mutated=16830498
+mutation-visible cut=69934843 n=69939613 l1 correct=16830035 mutated=16830498
+mutation-visible cut=197173117 n=197173130 l1 correct=19575652 mutated=19575653
+mutation-visible cut=210879861 n=210879906 l1 correct=19862043 mutated=19862049
+mutation-visible cut=210879890 n=210879906 l1 correct=19862043 mutated=19862049
+mutation-visible cut=213370237 n=213370240 l1 correct=19914894 mutated=19914895
+mutation-visible cut=213370248 n=213370252 l1 correct=19914894 mutated=19914895
+mutation-visible cut=230563097 n=230563126 l1 correct=20272471 mutated=20272476
+mutation-visible cut=230563328 n=230563402 l1 correct=20272471 mutated=20272482
+mutation-visible cut=325703428 n=325704132 l1 correct=22255176 mutated=22255202
+mutation-visible cut=325703538 n=325704132 l1 correct=22255176 mutated=22255202
+mutation-visible cut=386497261 n=386497375 l1 correct=23514961 mutated=23515134
+mutation-visible cut=386497283 n=386497375 l1 correct=23514961 mutated=23515134
+mutation-visible cut=386497319 n=386497375 l1 correct=23514961 mutated=23515134
+mutation-visible cut=470633497 n=470634137 l1 correct=25257841 mutated=25257890
+mutation-visible cut=470633533 n=470634137 l1 correct=25257841 mutated=25257890
+mutation-visible cut=470633555 n=470634137 l1 correct=25257841 mutated=25257890
+mutation-visible cut=498501831 n=498502262 l1 correct=25837788 mutated=25837827
+mutation-visible cut=498502150 n=498502262 l1 correct=25837788 mutated=25837827
+mutation-visible cut=498830719 n=498831986 l1 correct=25844718 mutated=25844777
+mutation-visible cut=498830840 n=498831986 l1 correct=25844718 mutated=25844777
+SUMMARY invariance_ok=37 invariance_fail=0 mutation_visible=26 mutation_invisible=11

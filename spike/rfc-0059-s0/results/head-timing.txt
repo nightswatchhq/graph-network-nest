@@ -1,0 +1,16 @@
+tail=2000 run=1 wall_s=0.850 peak_rss_mib=272.6 state_md5=271064d2
+tail=2000 run=2 wall_s=0.907 peak_rss_mib=288.5 state_md5=271064d2
+tail=2000 run=3 wall_s=0.852 peak_rss_mib=289.6 state_md5=271064d2
+tail=100000 run=1 wall_s=0.952 peak_rss_mib=288.4 state_md5=271064d2
+tail=100000 run=2 wall_s=0.956 peak_rss_mib=287.3 state_md5=271064d2
+tail=100000 run=3 wall_s=0.900 peak_rss_mib=290.2 state_md5=271064d2
+tail=1000000 run=1 wall_s=1.066 peak_rss_mib=301.8 state_md5=271064d2
+tail=1000000 run=2 wall_s=1.062 peak_rss_mib=312.9 state_md5=271064d2
+tail=1000000 run=3 wall_s=1.119 peak_rss_mib=252.3 state_md5=271064d2
+tail=2000 fold statements: 36, summed real 0.138 s
+tail=2000 fold statements: 36, summed real 0.146 s
+tail=2000 fold statements: 36, summed real 0.135 s
+empty-window wall_s=0.641 peak_rss_mib=272.7
+empty-window wall_s=0.640 peak_rss_mib=275.1
+empty-window wall_s=0.693 peak_rss_mib=279.9
+reference state_md5=271064d2
