@@ -1,4 +1,4 @@
-# RFC-0059 S0: checkpointed folds on the Network corpus (nightswatchhq/nuthatch#1439)
+# RFC-0059 S0: checkpointed folds on the Network corpus (nuthatch-org/nuthatch#1439)
 
 Run 2026-09-21 on the ThinkPad, against the sealed replay `nest-parity-20260920`: 10,285 segments
 through block 507,179,123. **Verdict: continue.** The carry-and-window form reproduces the one-shot

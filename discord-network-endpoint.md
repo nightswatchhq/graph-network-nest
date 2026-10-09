@@ -2,7 +2,7 @@
 
 Copy and paste this into the indexer channel:
 
-> The Night's Watch is now running a public, rate-limited Network Subgraph endpoint for Arbitrum One:
+> Nuthatch is now running a public, rate-limited Network Subgraph endpoint for Arbitrum One:
 >
 > `https://network.thenightswatch.dev/graphql`
 >
